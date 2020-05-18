@@ -30,7 +30,7 @@ public class CustomerController {
     private CustomerService customerService;
 
     @GetMapping
-    public Page<Customer> getCustomers(@RequestParam(name = "page", defaultValue = "120000") int page,@RequestParam(name = "size", defaultValue = "10") int size,
+    public Page<Customer> getCustomers(@RequestParam(name = "page", defaultValue = "0") int page,@RequestParam(name = "size", defaultValue = "150000") int size,
     @RequestParam(name = "sortBy",defaultValue = "id") String sortBy) {
         return customerService.getCustomers(page,size,sortBy);
     }
