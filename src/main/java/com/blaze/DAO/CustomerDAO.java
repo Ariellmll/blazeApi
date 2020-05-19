@@ -30,7 +30,7 @@ public class CustomerDAO {
     }
 
     public Page<Customer> getCustomers(int page, int size, String sortBy){
-        Sort sort = Sort.by(sortBy);
+        Sort sort = Sort.by(sortBy).descending();
         Pageable pageable = PageRequest.of(page, size, sort);
         return customerRepository.findAll(pageable);
     }
