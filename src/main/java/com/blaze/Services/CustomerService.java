@@ -35,8 +35,8 @@ public class CustomerService {
         return customerDAO.getCustomer(id);
     }
 
-    public List<Customer> getCustomerByFirstName(String FirstName){
-        return customerDAO.getCustomerByFirstName(FirstName);
+    public List<Customer> getCustomerBySearch(String search, String field){
+        return customerDAO.getCustomerBySearch(search,field);
     }
 
     public void deleteCustomer(String id){

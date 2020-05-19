@@ -51,8 +51,8 @@ public class CustomerController {
     }
 
     @GetMapping(value = "/search")
-    public List<Customer> getCustomerByFirstName(@RequestParam(name = "FirstName") String FirstName){
-        return customerService.getCustomerByFirstName(FirstName);
+    public List<Customer> getCustomerBySearch(@RequestParam(name = "search") String search, @RequestParam(name = "field") String field){
+        return customerService.getCustomerBySearch(search,field);
     }
 
     @DeleteMapping(value = "/{id}")

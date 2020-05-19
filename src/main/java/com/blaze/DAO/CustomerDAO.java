@@ -69,10 +69,10 @@ public class CustomerDAO {
         return customerRepository.insert(customers);
     }
 
-    public List<Customer> getCustomerByFirstName(String FirstName){
+    public List<Customer> getCustomerBySearch(String search, String field){
 
         Query query = new Query()
-                        .addCriteria(Criteria.where("FirstName").regex(".*" + FirstName + ".*", "i"));
+                        .addCriteria(Criteria.where(field).regex(".*" + search + ".*", "i"));
 
         return mongoTemplate.find(query, Customer.class);
         
